@@ -81,11 +81,11 @@ Data shape added: `resource.items[]` and `submission.items[]` hold `{k:'file', n
 
 ## Important limit: one browser only
 
-The prototype stores data in your browser (`localStorage`). Tabs and windows in the same browser share data and update live. **Different computers or phones do not share data.** Truly simultaneous users on different devices need the backend and database, where each user gets their own login token. That is the next step below.
+The prototype stores data in our browser (`localStorage`). Tabs and windows in the same browser share data and update live. **Different computers or phones do not share data.** Truly simultaneous users on different devices need the backend and database, where each user gets their own login token which is the next step written below , we are yet to do this.
 
 ## Connect it to the real backend
 
-1. Fork `Agarwalvidu/tn_web`, clone it, and add your MongoDB URL to the backend `.env` file. Run the backend at `http://localhost:8000`.
+1.  to fork `Agarwalvidu/tn_web`, clone it, and add it to our MongoDB URL to the backend `.env` file. Run the backend at `http://localhost:8000`.
 2. Read the backend route files and note the endpoints for login, programs, mentors, mentees, resources, submissions and grades.
 3. In `app.js`, the DATA LAYER block (`seed`, `load`, `save`, `mutate`) is the only code that stores data. Replace each `mutate(...)` call with a `fetch(API_BASE + '/endpoint', ...)` call, and load data from the API before `render()`.
 4. Replace the per-tab session with the token or cookie your backend returns at login.
@@ -96,9 +96,7 @@ The prototype stores data in your browser (`localStorage`). Tabs and windows in 
 
 Turn each view function (`home`, `login`, `admin`, `mentor`, `learn`, `lb`, `profile`) into a page or component, move `style.css` into global CSS, and keep `avatar`, `stats` and `generateInsights` as utilities.
 
-## Repository rules
 
-Do not push to the organizers' main repository. Fork it, work in your fork, and submit your fork's link. Never commit your `.env` file or any password.
 
 ## Files
 
